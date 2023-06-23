@@ -4,14 +4,14 @@
 <%- include('./partials/head')  %>
 <title><%= blog.title  %></title>
 </head>
-<body style="background-color: #8a58bd;">
+<body style="background-color: #8a58bd; color: rgb(219, 212, 212);">
     <%- include('./partials/navbar')  %>
     <div style="display: flex; justify-content: center;">
     <h1 style="text-align: center; display: inline-block; text-transform: capitalize; color: whitesmoke; border-bottom: 2px solid rgb(224, 219, 219); width: fit-content;"><%= blog.title %></h1>
 </div>
-    <div style="display: flex;">
-    <img  style="border: 2px solid gray;" src=<%= blog.coverImageUrl %> alt="" width="35%">
-    <div style="display: inline-block; width:65%; padding: 5px; margin-left: 15px; color: white; border: 2px solid grey; border-radius: 4px;"><%= blog.body  %></div>
+    <div style="display: flex; justify-content: center;">
+    <img  class="imj" <%= blog.coverImageUrl %> alt="">
+    <div class="bxt"><%= blog.body  %></div>
     </div>
 
 
