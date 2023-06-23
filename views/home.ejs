@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 <%- include('./partials/head')  %>
+<link rel="stylesheet" href="style.css">
 <title>Home</title>
 </head>
 <body style=" background-color: #4E31AA;">
     <%- include('./partials/navbar')  %>
-    <div class="container" style=" display: flex; justify-content: space-evenly; flex-wrap: wrap; flex-direction: row;">
+    <div class="container cc" style=" display: flex; justify-content:space-evenly; flex-wrap: wrap; flex-direction: row;">
     <% if(locals.user){ %>
         <% blogs.forEach(blog => { %>
-            <div class="" style="margin: 5px; width: 25vw; margin-top: 5vh; height: 70vh; border-radius: 20px; background-color: #576CBC; ">
-                <div style=" display: flex; justify-content: center;">
+            <div class="boxx">
+                <div style=" display: flex; justify-content: center;" class="boxxi">
               <% if (blog.coverImageUrl) {%>
                 <% var stp=blog.coverImageUrl %>
               <%} else{%>
                 <% var stp='/compulsory.jpg' %>
                 <% } %>
-  <img style="max-width: 25vw; max-height: 35vh; margin-top: 5vh;"src=<%= stp %> class="" alt=<%= blog.coverImageUrl  %>>
+  <img src=<%= stp %> class="imo" alt=<%= blog.coverImageUrl  %>>
 </div >
   <div class="card-body" >
-    <h5 style="text-align: center; margin-top: 5px;padding: 0px 12px; margin-bottom: 2px;" class="card-title"><%= blog.title.substr(0,34)%></h5>
-    <p style="text-align: center; padding: 0px 15px;" class="card-text"><%= `${blog.body.substr(0,60)}...`%></p>
+    <h4 style="text-align: center; margin-top: 5px;padding: 0px 12px; margin-bottom: 2px;" class="card-title"><%= `${blog.title.substr(0,27)}..`%></h4>
+    <p style="text-align: center; padding: 0px 20px;" class="card-text"><%= `${blog.body.substr(0,60)}...`%></p>
     <div style="display: flex; justify-content: center;">
     <a style="background-color: #3A1078; outline: none; color:rgb(235, 227, 227);" href=<%= `/blog/more/${blog.id}`  %> class="btn">Read More</a> 
 </div>  

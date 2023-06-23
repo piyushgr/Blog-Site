@@ -10,7 +10,7 @@ const adminRoutes=require('./routes/blog');
 require('dotenv').config();
 const checkforAuthenticationCookie = require('./middlewares/authentication');
 
-const LOCAL_URI="mongodb://0.0.0.0:27017/";
+// const MONGO_URI="mongodb://0.0.0.0:27017/";
 const MONGO_URI=process.env.MONGO_URI;
 const Blog=require('./models/blog');
 mongoose.connect(MONGO_URI).then(()=>{

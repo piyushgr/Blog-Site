@@ -1,36 +1,36 @@
 <nav class="navbar navbar-expand-lg" style="background-color:#3A1078" >
     <div class="container-fluid">
-      <a class="navbar-brand" style="color: rgb(235, 227, 227); margin-left: 2vw;" href="#">Blogger</a>
+      <a class="navbar-brand" style="color: rgb(235, 227, 227);" href="#">Blogger</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav" style="margin-left: 45vw; display: flex; justify-content: space-around;">
+        <ul class="navbar-nav" style=" display: flex; justify-content: space-around;">
           <li class="nav-item">
-            <a style="color: rgb(235, 227, 227); margin:0px 5vw;" class="nav-link active" aria-current="page" href="/">Home</a>
+            <a style="color: rgb(235, 227, 227); margin-left: 15vw;" class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <% if(locals.user){ %>
           <li class="nav-item">
-            <a style="color: rgb(235, 227, 227);" class="nav-link" href="/blog/addnewblog">Add Blog</a>
+            <a style="color: rgb(235, 227, 227); margin-left: 15vw;" class="nav-link" href="/blog/addnewblog">Add Blog</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="#">Pricing</a>
           </li> -->
           <li class="nav-item dropdown">
-            <a style="color: rgb(235, 227, 227); margin-left: 5vw;" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a style="color: rgb(235, 227, 227); margin-left: 15vw;" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <%= user.email %>
             </a>
             <ul class="dropdown-menu" style="background-color: #5C469C;  margin-left: 10vw;">
-              <li><a style="color: rgb(235, 227, 227);" class="dropdown-item" href="/user/logout">signout</a></li>
+              <li><a style="color: rgb(235, 227, 227); margin-left: 10vw;" class="dropdown-item" href="/user/logout">signout</a></li>
               <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
             </ul>
           </li>
           <% }else{ %>
             <li class="nav-item">
-              <a style="color:rgb(235, 227, 227);" class="nav-link" href="/user/signup">Create Account</a>
+              <a style="margin-left: 15vw; color:rgb(235, 227, 227);" class="nav-link" href="/user/signup">Create Account</a>
             </li>
             <li class="nav-item">
-              <a style="color: rgb(235, 227, 227); margin-left: 5vw;" class="nav-link" href="/user/signin">Sign In</a>
+              <a style="margin-left: 15vw; color: rgb(235, 227, 227);" class="nav-link" href="/user/signin">Sign In</a>
             </li>
          <% } %>
         </ul>
