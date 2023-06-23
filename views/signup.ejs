@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head')  %>
+    <title>Sign Up</title>
+</head>
+<body style=" background-color: #4E31AA; color: rgb(235, 227, 227);">
+    <%- include('./partials/navbar')  %>
+    <div class="container" style="width: 50vw; margin-top: 20vh;">
+        <form action="/user/signup" method="post">
+            <div class="row mb-3 mt-4">
+              <!-- <label for="fullname" class="col-sm-2 col-form-label">Full Name</label> -->
+              <div class="">
+                <input style="background-color: #4E31AA;" type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your name">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <!-- <label for="email" class="col-sm-2 col-form-label">Email</label> -->
+              <div class="">
+                <input style="background-color: #4E31AA;" type="email" class="form-control" id="email" name="email" placeholder="Enter your email address">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <!-- <label for="password" class="col-sm-2 col-form-label">Password</label> -->
+              <div class="">
+                <input style="background-color: #4E31AA;" type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+            </div>
+            </div>
+            <div style="display: flex; justify-content: center;">
+              <button type="submit" class="btn mt-4"  style=" background-color: #3A1078; color: rgb(235, 227, 227);">Sign Up</button>
+            </div>
+          </form>
+    </div>
+
+
+</html>
+    <%- include('./partials/scripts') %>
+</body>
+</html>

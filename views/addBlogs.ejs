@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include('./partials/head')  %>
+<title>Home</title>
+</head>
+<body>
+    <%- include('./partials/navbar')  %>
+    <%- include('./partials/scripts')  %>
+    <div class="container" style="width:70vw;">
+        <form action="/blog/addnewblog" method="post" enctype="multipart/form-data">
+            <div class="form-floating mb-3 mt-5">
+                <input type="text" class="form-control" id="title" placeholder="Enter Title here" name="title">
+                <label for="title">Title</label>
+              </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control" name="body" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <label for="floatingTextarea2">Write the Blog Here</label>
+              </div>
+            <div class="mb-3">
+                <input type="file" name="coverImage" id="coverImage">
+            </div>
+            <div style="align-items: center; display: flex; justify-content: center;">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

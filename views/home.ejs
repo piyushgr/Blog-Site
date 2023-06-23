@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include('./partials/head')  %>
+<title>Home</title>
+</head>
+<body style=" background-color: #4E31AA;">
+    <%- include('./partials/navbar')  %>
+    <div class="container" style=" display: flex; justify-content: space-evenly; flex-wrap: wrap; flex-direction: row;">
+    <% if(locals.user){ %>
+        <% blogs.forEach(blog => { %>
+            <div class="" style="margin: 5px; width: 25vw; margin-top: 5vh; height: 60vh; border-radius: 20px; background-color: #576CBC; ">
+                <div style=" display: flex; justify-content: center;">
+  <img style="max-width: 25vw; max-height: 35vh; margin-top: 5vh;"src=<%= blog.coverImageUrl %> class="" alt=" ">
+</div >
+  <div class="card-body" >
+    <h5 style="text-align: center; margin-top: 5px;" class="card-title"><%= blog.title%></h5>
+    <p style="text-align: center;" class="card-text"><%= blog.body%></p>
+    <div style="display: flex; justify-content: center;">
+    <a style="background-color: #3A1078; outline: none; color:rgb(235, 227, 227);" href=<%= `/blog/more/${blog.id}`  %> class="btn">Read More</a> 
+</div>  
+  </div>
+</div>
+            
+     <%   }); %>
+    </div>
+    <% }else{%>
+        <div  style="margin-top: 5vh;">
+            <div class="alert alert-danger alert-dismissible fade show container" role="alert">  
+              Please Login to access the content.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+    <% } %>
+    <%- include('./partials/scripts')  %>
+</body>
+</html>
