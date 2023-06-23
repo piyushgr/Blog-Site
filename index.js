@@ -41,5 +41,5 @@ app.use("/user",userRoutes);
 
 
 app.listen(PORT,()=>{
-    console.log('listening at port 8000');
+    console.log(`Server Listening at port ${PORT}`);
 })
