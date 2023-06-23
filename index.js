@@ -4,15 +4,16 @@ const cookieParser=require('cookie-parser');
 const path=require('path');
 
 const app=express();
-const PORT=8000 || process.env.PORT;
+const PORT=process.env.PORT||8000;
 const userRoutes=require('./routes/user');
 const adminRoutes=require('./routes/blog');
+require('dotenv').config();
 const checkforAuthenticationCookie = require('./middlewares/authentication');
 
-const ATLAS_URI="mongodb+srv://themaster:test1234@cluster0.ep5myi0.mongodb.net/?retryWrites=true&w=majority";
 const LOCAL_URI="mongodb://0.0.0.0:27017/";
+const MONGO_URI=process.env.MONGO_URI;
 const Blog=require('./models/blog');
-mongoose.connect(ATLAS_URI).then(()=>{
+mongoose.connect(MONGO_URI).then(()=>{
      console.log("Mongodb Connected"); 
 }).catch((err)=>{
     console.log(err.message);

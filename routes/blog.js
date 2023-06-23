@@ -27,11 +27,17 @@ const storage = multer.diskStorage({
     })
     router.post('/addnewblog',upload.single('coverImage'), async(req,res)=>{
         const {title,body,}=req.body;
+        if(req.body.filename===undefined){
+           var coverImageUrl='/compulsory.jpg'
+        }
+        else{
+        var coverImageUrl=`/uploads/${req.file.filename}`
+        }
         const blog=await Blog.create({
             body,
         title,
         createdBy:req.user._id,
-        coverImageUrl:`/uploads/${req.file.filename}`
+        coverImageUrl
 
     });
     return res.redirect('/');

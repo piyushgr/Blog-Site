@@ -11,7 +11,8 @@ const blogSchema=new Schema({
         required:true
     },
     coverImageUrl:{
-        type:String
+        type:String,
+        default:"/compulsory"
     },
     createdBy:{
         type:Schema.Types.ObjectId,
